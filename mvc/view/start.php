@@ -122,27 +122,6 @@ var direct = <?=(is_array($this->params['direct']))?json_encode($this->params['d
 var myPage = <?=$page?>;
 var editId = -1;
 //***********
-function getDirect(){
-	var dir = '';
-	for(var j in direct){
-		dir += '&direct['+j+']='+direct[j];
-	}
-	return dir;
-}
-//***********
-function changeQtty(){
-	var data = 'page=1';
-	data += '&onPage='+$('#on-page').val();
-	data += getDirect();
-	var foo = location.href.split('?');
-	location.href = foo[0]+'?'+data;
-}
-//***********
-function resetFilters(){
-	var foo = location.href.split('?');
-	location.href = foo[0]+'?page=1';
-}
-//***********
 <? if($this->user['reg']=='1' && $this->user['login']=='admin'){ ?>
 function editTaskContent(){
 	var data = 'ajax=editTaskContent&taskId='+editId;
