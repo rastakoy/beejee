@@ -20,7 +20,7 @@ spl_autoload_register(function ($className){
 	}else{
 		if(preg_match("/^model/", strtolower($className))){
 			$foo = 'model.'.ucfirst(str_replace('model', '', (strtolower($className))));
-			include 'mvc/model/'.strtolower($foo).'.php';
+			include 'mvc/model/'.$foo.'.php';
 		}else{
 			include 'mvc/controller/'.strtolower($className).'.php';
 		}

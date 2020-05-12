@@ -19,7 +19,7 @@ class Controller{
 		//echo '<pre>'; print_r($data); echo '</pre>';
 		if(is_array($data['renderVariables'])){ foreach($data['renderVariables'] as $key=>$value){ $$key = $value; }}
 		require_once('template/default/header.php');		
-		require_once('mvc/view/'.$this->className.'.php');
+		require_once('mvc/view/'.strtolower($this->className).'.php');
 		require_once('template/default/footer.php');
 	}
 	
